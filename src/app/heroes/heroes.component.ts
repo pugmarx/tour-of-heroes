@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
+import { Student } from '../hero';
 //import { HEROES } from '../mock-heroes';
 import { HeroService } from '../hero.service';
 
@@ -38,7 +38,7 @@ export class HeroesComponent implements OnInit {
 
   //heroes = HEROES;
 
- heroes: Hero[];
+ heroes: Student[];
 
   //hero='Windstorm';
 
@@ -50,13 +50,13 @@ export class HeroesComponent implements OnInit {
 	add(name: string): void {
 	  name = name.trim();
 	  if (!name) { return; }
-	  this.heroService.addHero({ name } as Hero)
+	  this.heroService.addHero({ name } as Student)
 	    .subscribe(hero => {
 	      this.heroes.push(hero);
 	    });
 	}
 
-	delete(hero: Hero): void {
+	delete(hero: Student): void {
 	  this.heroes = this.heroes.filter(h => h !== hero);
 	  this.heroService.deleteHero(hero).subscribe();
 	}
