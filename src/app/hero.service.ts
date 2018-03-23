@@ -20,12 +20,12 @@ export class HeroService {
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   private heroesUrl = 'api/heroes';  // URL to web api
-
+  //private heroesUrl = 'http://localhost:8080/StudentRestApi/student/';
 
   getHeroes(): Observable<Student[]>{
   	return this.http.get<Student[]>(this.heroesUrl)
   	.pipe(
-  			 tap(heroes => this.log(`fetched heroes`)),
+  			 tap(heroes => this.log(`fetching all heroes`)),
         	catchError(this.handleError('getHeroes', []))
   		);
   }
