@@ -14,6 +14,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+// Service
 @Injectable()
 export class HeroService {
 
